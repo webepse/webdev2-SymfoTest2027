@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Show{% endblock %}
+
+{% block body %}
+<h1>Page Show</h1>
+<h1>ID: {{ param }}</h1>
+<a href="{{ path('app_home') }}">Revenir à l'accueil</a>
+{% endblock %}

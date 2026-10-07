@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block stylesheets %}
+    
+{% endblock %}
+
+{% block body %}
+    <a href="{{ path('app_test') }}">Lien vers page test</a>
+    <br>
+    <a href="{{ path('blog_show',{id:23}) }}">Lien vers la page blog</a>
+    <h1>Hello {{controller_name}}! - {{ age }}</h1>
+    {% if age > 21 %}
+        <p>tu peux aller au casino</p>
+    {% else %}
+        <p>tu ne peux pas rentrer au casino</p>
+    {% endif %}
+
+    {% for compteur in 0..10 %}
+        <div>{{ compteur }}</div>
+    {% endfor %}
+    {# commentaires #}
+    {% for compteur in 'a'..'z' %}
+        <div>{{ loop.index }}/{{ loop.length }} - {{ compteur }}</div>
+    {% endfor %}
+    <h2>Tableau</h2>
+    {% for value in tab %}
+        <div>{{ value }}</div>
+    {% endfor %}
+
+    {% for key, value in person %}
+        <div>
+            {% if loop.first %}
+                <h1>{{ key }} : {{ value }}</h1>
+            {% else %}
+                <div>{{ key }} : {{ value }}</div>
+            {% endif %}
+        </div>
+       
+    {% endfor %}
+    {# 
+        {{ dump(person) }}
+
+     #}
+
+    {{ 42.55 | round(2) }}
+{% endblock %}
+
+
